@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{   int a=5;
+    recursion(a);
+    return 0;
+}
+void recursion(int n)
+{
+    printf("%d \t",n);
+    if(n!=0)
+    {
+      recursion(--n);
+    }
+}
