@@ -1,0 +1,57 @@
+
+#define RIGHT 0
+#define LEFT 1
+void display(int a[],int n);
+void rotate(int a[],int n,int dir,int sc);
+int main()
+{
+   int a[4]={10,20,30,40};
+   display(a,4);
+   rotate(a,4,RIGHT,2);
+   printf("\n");
+   display(a,4);
+   return 0;
+}
+
+ void display(int a[],int n)
+ {
+     int j;
+     for(j=0;j<n;j++)
+     {
+         printf("%d \t",a[j]);
+     }
+ }
+
+ void rotate(int a[],int n,int dir,int sc)
+ {
+     int temp,i,k;
+     if(dir==RIGHT)
+     {
+         while(sc)
+         {
+             temp=a[n-1];
+             for(i=n-1;i>=0;i--)
+             {
+
+                 a[i]=a[i-1];
+             }
+             a[0]=temp;
+             sc--;
+         }
+     }
+     else
+     {
+           while(sc)
+         {
+            temp=a[0];
+             for(k=n-1;k>=0;k--)
+             {
+
+                 a[k]=a[k+1];
+             }
+             a[n-1]=temp;
+             sc--;
+
+     }
+ }
+ }
